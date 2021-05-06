@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MyContext } from '../context/MyContext';
 
-const ToDonesContainer = ({TODONES,updateItem,DeleteItem}) => {
+const ToDonesContainer = () => {
   
+  const {TODONES,updateItem,DeleteItem }= useContext(MyContext)
 
   const toDoNesItems = TODONES.map(el => {
     return (

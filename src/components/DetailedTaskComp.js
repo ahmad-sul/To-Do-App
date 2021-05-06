@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory, useParams } from 'react-router'
+import { MyContext } from '../context/MyContext'
 
-export default function DetailedTaskComp({data}) {
-console.log(data)
+export default function DetailedTaskComp() {
+const {tasks} = useContext(MyContext)
 const {text}=useParams()
 console.log(text)
 
-let searchTask = data.find(item=>item.text===text)
+let searchTask = tasks.find(item=>item.text===text)
 console.log(searchTask)
     return (
         <div>
